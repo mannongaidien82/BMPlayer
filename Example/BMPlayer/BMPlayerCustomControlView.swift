@@ -21,7 +21,7 @@ class BMPlayerCustomControlView: BMPlayerControlView {
      Override if need to customize UI components
      */
     override func customizeUIComponents() {
-        mainMaskView.backgroundColor   = UIColor.clear
+        mainMaskView.backgroundColor   = UIColor.blue
         topMaskView.backgroundColor    = UIColor.black.withAlphaComponent(0.4)
         bottomMaskView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         timeSlider.setThumbImage(UIImage(named: "custom_slider_thumb"), for: .normal)
