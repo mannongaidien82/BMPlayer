@@ -26,7 +26,8 @@ class ViewController: UIViewController {
         ],[
             "Custom Control UI",
             "Custom Control UI 2",
-            "Custom Control UI In Storyboard"
+            "Custom Control UI In Storyboard",
+            "My Custom Control UI In Storyboard"
         ]
     
     ]
@@ -68,6 +69,8 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         if (indexPath.section, indexPath.row) == (2, 2) {
             performSegue(withIdentifier: "pushStoryboardPlayer", sender: indexPath)
+        } else if (indexPath.section, indexPath.row) == (2, 3) {
+            performSegue(withIdentifier: "pushStoryboardPlayer1", sender: indexPath)
         } else {
             performSegue(withIdentifier: "pushVideoDetail", sender: indexPath)
         }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="udg-xo-r4F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="udg-xo-r4F">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,6 +64,7 @@
                         <outlet property="tableView" destination="xba-Qr-GbE" id="AXy-Ns-BQG"/>
                         <segue destination="88N-EV-j8R" kind="push" identifier="pushVideoDetail" id="q3u-x2-RwG"/>
                         <segue destination="0sg-8V-n5r" kind="push" identifier="pushStoryboardPlayer" id="HoO-Ic-UrA"/>
+                        <segue destination="pmx-RP-rz0" kind="push" identifier="pushStoryboardPlayer1" id="tyw-hZ-Dux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -125,6 +126,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gf8-8b-qD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721" y="899"/>
+        </scene>
+        <!--My Storyboard Player View Controller-->
+        <scene sceneID="YUA-sD-Cgu">
+            <objects>
+                <viewController id="pmx-RP-rz0" customClass="MyStoryboardPlayerViewController" customModule="BMPlayer_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nmo-Bk-3x5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxF-fH-5Ba"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Hs-RP-WBn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sW-F5-NQm" customClass="MyBMCustomPlayer" customModule="BMPlayer_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9sW-F5-NQm" secondAttribute="height" multiplier="16:9" id="3vU-lo-0ME"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9sW-F5-NQm" secondAttribute="trailing" id="DbM-Nn-NzU"/>
+                            <constraint firstItem="9sW-F5-NQm" firstAttribute="top" secondItem="9Hs-RP-WBn" secondAttribute="top" id="JwT-y2-WWk"/>
+                            <constraint firstItem="9sW-F5-NQm" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="bfx-w2-eeP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wT9-gk-vux"/>
+                    <connections>
+                        <outlet property="player" destination="9sW-F5-NQm" id="YLY-dH-LU0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUj-Rb-1ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="1201"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gn9-0c-Swe">

@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		20DC0D02A7AA221F68D86034 /* Pods_BMPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D397051623BC89F9251AE28 /* Pods_BMPlayer_Example.framework */; };
 		3D47737C1F27471B00273367 /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47737B1F27471B00273367 /* aa.swift */; };
-		3D47737E1F27472200273367 /* MyBMPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47737D1F27472200273367 /* MyBMPlayerControlView.swift */; };
+		3D47737E1F27472200273367 /* BMPlayerCustomControlView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47737D1F27472200273367 /* BMPlayerCustomControlView1.swift */; };
 		3D4773801F27489600273367 /* MyBMPlayerControlView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D47737F1F27489600273367 /* MyBMPlayerControlView+EX.swift */; };
+		3D4773821F274C2600273367 /* MyStoryboardPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4773811F274C2600273367 /* MyStoryboardPlayerViewController.swift */; };
+		3D4773841F274E3F00273367 /* MyBMCustomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4773831F274E3F00273367 /* MyBMCustomPlayer.swift */; };
+		3D4773861F274EB100273367 /* MyBMPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4773851F274EB100273367 /* MyBMPlayer.swift */; };
 		529232201EBDEE1200285615 /* BMCustomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292321F1EBDEE1200285615 /* BMCustomPlayer.swift */; };
 		529232221EBDF04C00285615 /* StoryboardPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529232211EBDF04C00285615 /* StoryboardPlayerViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -27,8 +30,11 @@
 
 /* Begin PBXFileReference section */
 		3D47737B1F27471B00273367 /* aa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
-		3D47737D1F27472200273367 /* MyBMPlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBMPlayerControlView.swift; sourceTree = "<group>"; };
+		3D47737D1F27472200273367 /* BMPlayerCustomControlView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView1.swift; sourceTree = "<group>"; };
 		3D47737F1F27489600273367 /* MyBMPlayerControlView+EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyBMPlayerControlView+EX.swift"; sourceTree = "<group>"; };
+		3D4773811F274C2600273367 /* MyStoryboardPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStoryboardPlayerViewController.swift; sourceTree = "<group>"; };
+		3D4773831F274E3F00273367 /* MyBMCustomPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBMCustomPlayer.swift; sourceTree = "<group>"; };
+		3D4773851F274EB100273367 /* MyBMPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBMPlayer.swift; sourceTree = "<group>"; };
 		5289EA86F9A99469E4F811E8 /* Pods-BMPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMPlayer_Example/Pods-BMPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5292321F1EBDEE1200285615 /* BMCustomPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCustomPlayer.swift; sourceTree = "<group>"; };
 		529232211EBDF04C00285615 /* StoryboardPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardPlayerViewController.swift; sourceTree = "<group>"; };
@@ -76,8 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				3D47737B1F27471B00273367 /* aa.swift */,
-				3D47737D1F27472200273367 /* MyBMPlayerControlView.swift */,
+				3D47737D1F27472200273367 /* BMPlayerCustomControlView1.swift */,
 				3D47737F1F27489600273367 /* MyBMPlayerControlView+EX.swift */,
+				3D4773811F274C2600273367 /* MyStoryboardPlayerViewController.swift */,
+				3D4773831F274E3F00273367 /* MyBMCustomPlayer.swift */,
+				3D4773851F274EB100273367 /* MyBMPlayer.swift */,
 			);
 			name = customizw;
 			sourceTree = "<group>";
@@ -332,14 +341,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				529232221EBDF04C00285615 /* StoryboardPlayerViewController.swift in Sources */,
-				3D47737E1F27472200273367 /* MyBMPlayerControlView.swift in Sources */,
+				3D4773821F274C2600273367 /* MyStoryboardPlayerViewController.swift in Sources */,
+				3D47737E1F27472200273367 /* BMPlayerCustomControlView1.swift in Sources */,
 				529232201EBDEE1200285615 /* BMCustomPlayer.swift in Sources */,
 				6AB6B7171CD226F70031AFC5 /* VideoPlayViewController.swift in Sources */,
 				6ABE976E1E960FC3006CE453 /* BMPlayerCustomControlView2.swift in Sources */,
+				3D4773841F274E3F00273367 /* MyBMCustomPlayer.swift in Sources */,
 				6A33958B1E93A4B300809411 /* BMPlayerCustomControlView.swift in Sources */,
 				3D47737C1F27471B00273367 /* aa.swift in Sources */,
 				3D4773801F27489600273367 /* MyBMPlayerControlView+EX.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				3D4773861F274EB100273367 /* MyBMPlayer.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

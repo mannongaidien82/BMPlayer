@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
-
-extension MyBMPlayerControlView {
-    public enum ButtonType: Int {
-        case play       = 101
-        case pause      = 102
-        case back       = 103
-        case fullscreen = 105
-        case replay     = 106
-    }
-}
+//
+//extension MyBMPlayerControlView {
+//    public enum ButtonType: Int {
+//        case play       = 101
+//        case pause      = 102
+//        case back       = 103
+//        case fullscreen = 105
+//        case replay     = 106
+//    }
+//}
