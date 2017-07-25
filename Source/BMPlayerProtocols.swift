@@ -18,7 +18,7 @@ extension BMPlayerControlView {
     }
 }
 
-extension BMPlayer {
+public extension BMPlayer {
     static func formatSecondsToString(_ secounds: TimeInterval) -> String {
         let Min = Int(secounds / 60)
         let Sec = Int(secounds.truncatingRemainder(dividingBy: 60))
