@@ -13,8 +13,19 @@ class MyStoryboardPlayerViewController: UIViewController {
     
     @IBOutlet weak var player: MyBMCustomPlayer!
     
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var myCurrentTimeLabel: UILabel!
+    @IBOutlet weak var mySliderTime: BMTimeSlider!
+    @IBOutlet weak var myPlayerButton: UIButton!
+    
     override func viewDidLoad() {
+        print(#function)
         super.viewDidLoad()
+        
+//        let myPlayerCustomcontrol = MyBMCustomPlayer.storyBoardCustomControl() as! BMPlayerCustomControlView1
+//        myPlayerCustomcontrol.playButton = myPlayerButton
+//        myPlayerCustomcontrol.timeSlider = mySliderTime
+//        myPlayerCustomcontrol.currentTimeLabel = myCurrentTimeLabel
         
         player.backBlock = { [unowned self] (isFullScreen) in
             if isFullScreen == true {

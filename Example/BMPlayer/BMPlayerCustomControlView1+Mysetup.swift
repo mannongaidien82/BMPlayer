@@ -1,5 +1,5 @@
 //
-//  sdf.swift
+//  aa.swift
 //  BMPlayer
 //
 //  Created by tran-ngocdien on 2017/07/25.
@@ -9,24 +9,8 @@
 import Foundation
 import BMPlayer
 
-class BMPlayerCustomControlView1: BMPlayerControlView {
-    
-    var playbackRateButton = UIButton(type: .custom)
-    var playRate: Float = 1.0
-    
-    var rotateButton = UIButton(type: .custom)
-    var rotateCount: CGFloat = 0
-    override func setupUIComponents() {
-        newsetupUIComponents()
-    }
-    
-    override open func addSnapKitConstraint() {
-        newaddSnapKitConstraint()
-    }
-    
-    override func customizeUIComponents() {}
-    
-    func newsetupUIComponents() {
+extension BMPlayerCustomControlView1 {
+    func mysetupUIComponents() {
         print(#function)
         // Subtile view
         subtitleLabel.numberOfLines = 0
@@ -89,17 +73,14 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         totalTimeLabel.text         = "00:00"
         totalTimeLabel.textAlignment   = NSTextAlignment.center
         
+        
         timeSlider.maximumValue = 1.0
         timeSlider.minimumValue = 0.0
         timeSlider.value        = 0.0
-        timeSlider.setThumbImage(MyBMImageResourcePath("slider-thumb"), for: .normal)
+        timeSlider.setThumbImage(BMImageResourcePath("Pod_Asset_BMPlayer_slider_thumb"), for: .normal)
         
-        //timeSlider.maximumTrackTintColor = UIColor.clear
-        //timeSlider.minimumTrackTintColor = BMPlayerConf.tintColor
-        // new
-        timeSlider.minimumTrackTintColor = UIColor(hex: "FF7D9B")
-        timeSlider.maximumTrackTintColor = UIColor.white
-        //
+        timeSlider.maximumTrackTintColor = UIColor.clear
+        timeSlider.minimumTrackTintColor = BMPlayerConf.tintColor
         
         timeSlider.addTarget(self, action: #selector(progressSliderTouchBegan(_:)),
                              for: UIControlEvents.touchDown)
@@ -147,7 +128,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         addGestureRecognizer(tapGesture)
     }
     
-    open func newaddSnapKitConstraint() {
+    open func myaddSnapKitConstraint() {
         // Main mask view
         mainMaskView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
@@ -268,75 +249,46 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             $0.bottom.equalTo(subtitleBackView.snp.bottom).offset(-2)
         }
     }
-
     
-    override func updateUI(_ isForFullScreen: Bool) {
-        super.updateUI(isForFullScreen)
-        playbackRateButton.isHidden = !isForFullScreen
-        rotateButton.isHidden = !isForFullScreen
-        if let layer = player?.playerLayer {
-            layer.frame = player!.bounds
-        }
-    }
-    
-    override func controlViewAnimation(isShow: Bool) {
-        self.isMaskShowing = isShow
-        UIApplication.shared.setStatusBarHidden(!isShow, with: .fade)
+    /**
+     Override if need to customize UI components
+     */
+    open func mycustomizeUIComponents() {
+        print(#function)
+        mainMaskView.backgroundColor   = UIColor.clear
+        topMaskView.backgroundColor    = UIColor.black.withAlphaComponent(0.4)
+        bottomMaskView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        timeSlider.setThumbImage(UIImage(named: "slider-thumb"), for: .normal)
         
-        UIView.animate(withDuration: 0.24, animations: {
-            self.topMaskView.snp.remakeConstraints {
-                $0.top.equalTo(self.mainMaskView).offset(isShow ? 0 : -65)
-                $0.left.right.equalTo(self.mainMaskView)
-                $0.height.equalTo(65)
-            }
-            
-            self.bottomMaskView.snp.remakeConstraints {
-                $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : 50)
-                $0.left.right.equalTo(self.mainMaskView)
-                $0.height.equalTo(50)
-            }
-            self.layoutIfNeeded()
-        }) { (_) in
-            self.autoFadeOutControlViewWithAnimation()
-        }
-    }
-    
-    @objc func onPlaybackRateButtonPressed() {
-        autoFadeOutControlViewWithAnimation()
-        switch playRate {
-        case 1.0:
-            playRate = 1.5
-        case 1.5:
-            playRate = 0.5
-        case 0.5:
-            playRate = 1.0
-        default:
-            playRate = 1.0
-        }
+        topMaskView.addSubview(playbackRateButton)
+        
+        playbackRateButton.layer.cornerRadius = 2
+        playbackRateButton.layer.borderWidth  = 1
+        playbackRateButton.layer.borderColor  = UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8 ).cgColor
+        playbackRateButton.setTitleColor(UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9 ), for: .normal)
         playbackRateButton.setTitle("  rate \(playRate)  ", for: .normal)
-        delegate?.controlView?(controlView: self, didChangeVideoPlaybackRate: playRate)
-    }
-    
-    
-    
-    @objc func onRotateButtonPressed() {
-        guard let layer = player?.playerLayer else {
-            return
+        playbackRateButton.addTarget(self, action: #selector(onPlaybackRateButtonPressed), for: .touchUpInside)
+        playbackRateButton.titleLabel?.font   = UIFont.systemFont(ofSize: 12)
+        playbackRateButton.isHidden = true
+        playbackRateButton.snp.makeConstraints {
+            $0.right.equalTo(chooseDefitionView.snp.left).offset(-5)
+            $0.centerY.equalTo(chooseDefitionView)
         }
-        print("rotated")
-        rotateCount += 1
-        layer.transform = CGAffineTransform(rotationAngle: rotateCount * CGFloat(Double.pi/2))
-        layer.frame = player!.bounds
+        
+        topMaskView.addSubview(rotateButton)
+        rotateButton.layer.cornerRadius = 2
+        rotateButton.layer.borderWidth  = 1
+        rotateButton.layer.borderColor  = UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8 ).cgColor
+        rotateButton.setTitleColor(UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9 ), for: .normal)
+        rotateButton.setTitle("  rotate  ", for: .normal)
+        rotateButton.addTarget(self, action: #selector(onRotateButtonPressed), for: .touchUpInside)
+        rotateButton.titleLabel?.font   = UIFont.systemFont(ofSize: 12)
+        rotateButton.isHidden = true
+        rotateButton.snp.makeConstraints {
+            $0.right.equalTo(playbackRateButton.snp.left).offset(-5)
+            $0.centerY.equalTo(chooseDefitionView)
+        }
     }
     
-    func BMImageResourcePath(_ fileName: String) -> UIImage? {
-        let bundle = Bundle(for: BMPlayer.self)
-        let image  = UIImage(named: fileName, in: bundle, compatibleWith: nil)
-        return image
-    }
-    
-    
-    func MyBMImageResourcePath(_ fileName: String) -> UIImage? {
-        return UIImage(named: fileName)
-    }
+
 }

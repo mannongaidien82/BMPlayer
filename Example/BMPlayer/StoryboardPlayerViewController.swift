@@ -15,7 +15,7 @@ class StoryboardPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(#function)
         player.backBlock = { [unowned self] (isFullScreen) in
             if isFullScreen == true {
                 return

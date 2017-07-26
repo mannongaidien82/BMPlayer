@@ -141,9 +141,54 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sW-F5-NQm" customClass="MyBMCustomPlayer" customModule="BMPlayer_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9sW-F5-NQm" secondAttribute="height" multiplier="16:9" id="3vU-lo-0ME"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-ie-1lC" userLabel="controlView">
+                                <rect key="frame" x="0.0" y="311" width="375" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmg-ii-DlU">
+                                        <rect key="frame" x="15" y="17.5" width="17" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="7lz-rR-GLs"/>
+                                            <constraint firstAttribute="width" constant="17" id="dly-ga-9UH"/>
+                                        </constraints>
+                                        <state key="normal" image="pause"/>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yxO-qE-WWj" customClass="BMTimeSlider" customModule="BMPlayer">
+                                        <rect key="frame" x="40" y="12" width="222.5" height="31"/>
+                                        <color key="minimumTrackTintColor" red="0.98823529409999999" green="0.3921568627" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy4-6Q-Drt">
+                                        <rect key="frame" x="270.5" y="17" width="34.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9x-en-7YE">
+                                        <rect key="frame" x="315" y="10" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ByQ-Ab-bQ8"/>
+                                            <constraint firstAttribute="width" constant="45" id="O52-HJ-46d"/>
+                                        </constraints>
+                                        <state key="normal" image="play-video-heart"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="yxO-qE-WWj" firstAttribute="centerY" secondItem="NrA-ie-1lC" secondAttribute="centerY" id="JbQ-0Q-p1a"/>
+                                    <constraint firstItem="uy4-6Q-Drt" firstAttribute="centerY" secondItem="NrA-ie-1lC" secondAttribute="centerY" id="RH0-VK-HfH"/>
+                                    <constraint firstAttribute="height" constant="55" id="WJm-cA-oTJ"/>
+                                    <constraint firstItem="Zmg-ii-DlU" firstAttribute="centerY" secondItem="NrA-ie-1lC" secondAttribute="centerY" id="WpF-5w-oFF"/>
+                                    <constraint firstItem="C9x-en-7YE" firstAttribute="leading" secondItem="uy4-6Q-Drt" secondAttribute="trailing" constant="10" id="Ycg-sv-mZ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="C9x-en-7YE" secondAttribute="trailing" constant="15" id="ca0-x9-QHF"/>
+                                    <constraint firstItem="C9x-en-7YE" firstAttribute="top" secondItem="NrA-ie-1lC" secondAttribute="top" constant="10" id="h6M-Yz-95Y"/>
+                                    <constraint firstItem="uy4-6Q-Drt" firstAttribute="leading" secondItem="yxO-qE-WWj" secondAttribute="trailing" constant="10" id="h8Y-Ai-K5u"/>
+                                    <constraint firstItem="Zmg-ii-DlU" firstAttribute="leading" secondItem="NrA-ie-1lC" secondAttribute="leading" constant="15" id="hZA-MG-Nod"/>
+                                    <constraint firstItem="yxO-qE-WWj" firstAttribute="leading" secondItem="Zmg-ii-DlU" secondAttribute="trailing" constant="10" id="wOx-j6-S6S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -151,17 +196,24 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9sW-F5-NQm" secondAttribute="trailing" id="DbM-Nn-NzU"/>
                             <constraint firstItem="9sW-F5-NQm" firstAttribute="top" secondItem="9Hs-RP-WBn" secondAttribute="top" id="JwT-y2-WWk"/>
+                            <constraint firstItem="NrA-ie-1lC" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="KgT-jt-mIk"/>
                             <constraint firstItem="9sW-F5-NQm" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="bfx-w2-eeP"/>
+                            <constraint firstAttribute="trailing" secondItem="NrA-ie-1lC" secondAttribute="trailing" id="w0Y-lN-1ay"/>
+                            <constraint firstItem="NrA-ie-1lC" firstAttribute="top" secondItem="9sW-F5-NQm" secondAttribute="bottom" constant="100" id="zvr-E7-9f1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wT9-gk-vux"/>
                     <connections>
+                        <outlet property="heartButton" destination="C9x-en-7YE" id="rz0-ig-JMC"/>
+                        <outlet property="myCurrentTimeLabel" destination="uy4-6Q-Drt" id="2vq-JM-NxM"/>
+                        <outlet property="myPlayerButton" destination="Zmg-ii-DlU" id="jkf-KC-v2Q"/>
+                        <outlet property="mySliderTime" destination="yxO-qE-WWj" id="EeS-wq-oHJ"/>
                         <outlet property="player" destination="9sW-F5-NQm" id="YLY-dH-LU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUj-Rb-1ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="1201"/>
+            <point key="canvasLocation" x="956.5" y="1200.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gn9-0c-Swe">
@@ -182,6 +234,10 @@
             <point key="canvasLocation" x="654" y="305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause" width="17" height="20"/>
+        <image name="play-video-heart" width="45" height="45"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
