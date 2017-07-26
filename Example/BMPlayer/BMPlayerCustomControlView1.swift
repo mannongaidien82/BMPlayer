@@ -20,6 +20,9 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         newsetupUIComponents()
     }
     
+    let controlViewHieght : CGFloat = 55.0
+    let videoHeight : CGFloat = 375.0
+    
     override open func addSnapKitConstraint() {
         newaddSnapKitConstraint()
     }
@@ -146,17 +149,25 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapGestureTapped(_:)))
         addGestureRecognizer(tapGesture)
     }
+//    
+//    func setControlViewHeight(playerViewHeight: CGFloat) {
+//        mainMaskView.snp.makeConstraints { (make) in
+//            make.height.equalTo(playerViewHeight + controlViewHieght)
+//        }
+//    }
     
     open func newaddSnapKitConstraint() {
         // Main mask view
         mainMaskView.snp.makeConstraints { (make) in
-            //make.edges.equalTo(self)
-            make.top.left.right.equalTo(self)
-            make.height.equalTo(530)
+            make.edges.equalTo(self)
+           // make.top.left.right.equalTo(self)
+            //make.height.equalTo(videoHieght + controlViewHieght) // self.frame.size.height = 0
         }
         
         maskImageView.snp.makeConstraints { (make) in
-            make.edges.equalTo(mainMaskView)
+            make.top.left.right.equalTo(mainMaskView)
+            make.height.equalTo(videoHeight)
+            //make.edges.equalTo(mainMaskView)
         }
         
         
@@ -312,7 +323,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         playbackRateButton.isHidden = !isForFullScreen
         rotateButton.isHidden = !isForFullScreen
         if let layer = player?.playerLayer {
-            layer.frame = player!.bounds
+            layer.frame = CGRect(x: 0, y: 0, width: player!.playLayerWidth, height: player!.playLayerHeight)////player!.bounds
         }
     }
     
@@ -328,9 +339,9 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             }
             
             self.bottomMaskView.snp.remakeConstraints {
-                $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : 50)
+                $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : self.controlViewHieght)
                 $0.left.right.equalTo(self.mainMaskView)
-                $0.height.equalTo(100)
+                $0.height.equalTo(self.controlViewHieght)
             }
             self.layoutIfNeeded()
         }) { (_) in

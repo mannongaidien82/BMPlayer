@@ -406,14 +406,24 @@ open class BMPlayer: UIView {
         }
     }
     
+    open var playLayerWidth : CGFloat = 375.0
+    open var playLayerHeight : CGFloat = 375.0
+    func myCustomPlayLayerConstraints() {
+        playerLayer?.width = playLayerWidth
+        playerLayer?.height = playLayerHeight
+    }
+    
     fileprivate func preparePlayer() {
         playerLayer = BMPlayerLayerView()
         playerLayer!.videoGravity = videoGravity
         insertSubview(playerLayer!, at: 0)
         playerLayer!.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            //make.edges.equalTo(self)
+            make.top.left.right.equalTo(self)
+            make.height.equalTo(playLayerHeight)
         }
         playerLayer!.delegate = self
+        myCustomPlayLayerConstraints()
         controlView.showLoader()
         self.layoutIfNeeded()
     }

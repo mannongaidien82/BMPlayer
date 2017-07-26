@@ -140,14 +140,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sW-F5-NQm" customClass="MyBMCustomPlayer" customModule="BMPlayer_Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="9sW-F5-NQm" secondAttribute="height" multiplier="16:9" id="3vU-lo-0ME"/>
+                                    <constraint firstAttribute="height" constant="430" id="DHO-7l-vit"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-ie-1lC" userLabel="controlView">
-                                <rect key="frame" x="0.0" y="311" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="530" width="375" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmg-ii-DlU">
                                         <rect key="frame" x="15" y="17.5" width="17" height="20"/>
@@ -197,7 +197,7 @@
                             <constraint firstAttribute="trailing" secondItem="9sW-F5-NQm" secondAttribute="trailing" id="DbM-Nn-NzU"/>
                             <constraint firstItem="9sW-F5-NQm" firstAttribute="top" secondItem="9Hs-RP-WBn" secondAttribute="top" id="JwT-y2-WWk"/>
                             <constraint firstItem="NrA-ie-1lC" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="KgT-jt-mIk"/>
-                            <constraint firstItem="9sW-F5-NQm" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="bfx-w2-eeP"/>
+                            <constraint firstItem="9sW-F5-NQm" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="NOw-4R-9WR"/>
                             <constraint firstAttribute="trailing" secondItem="NrA-ie-1lC" secondAttribute="trailing" id="w0Y-lN-1ay"/>
                             <constraint firstItem="NrA-ie-1lC" firstAttribute="top" secondItem="9sW-F5-NQm" secondAttribute="bottom" constant="100" id="zvr-E7-9f1"/>
                         </constraints>

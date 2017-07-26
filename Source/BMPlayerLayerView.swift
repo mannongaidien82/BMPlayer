@@ -163,14 +163,17 @@ open class BMPlayerLayerView: UIView {
         NotificationCenter.default.removeObserver(self)
     }
     
+    var width : CGFloat = 375.0
+    var height : CGFloat = 375.0
     
-    // MARK: - layoutSubviews
+    // MARK: - layoutSubviews/*
     override open func layoutSubviews() {
         super.layoutSubviews()
         switch self.aspectRatio {
         case .default:
             self.playerLayer?.videoGravity = "AVLayerVideoGravityResizeAspect"
-            self.playerLayer?.frame  = self.bounds
+            //self.playerLayer?.frame = self.bounds
+            self.playerLayer?.frame = CGRect(x: 0, y: 0, width: width, height: height)
             break
         case .sixteen2NINE:
             self.playerLayer?.videoGravity = "AVLayerVideoGravityResize"
