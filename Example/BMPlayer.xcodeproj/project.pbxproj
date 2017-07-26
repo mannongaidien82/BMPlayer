@@ -15,7 +15,8 @@
 		3D4773841F274E3F00273367 /* MyBMCustomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4773831F274E3F00273367 /* MyBMCustomPlayer.swift */; };
 		3D4773861F274EB100273367 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4773851F274EB100273367 /* UIColor.swift */; };
 		3DFA46411F2831A6002C034F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA46401F2831A6002C034F /* String.swift */; };
-		3DFA46471F2890E9002C034F /* video375.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA46461F2890E9002C034F /* video375.mp4 */; };
+		3DFA46491F2892FA002C034F /* video375.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA46481F2892FA002C034F /* video375.mp4 */; };
+		3DFA464A1F2892FF002C034F /* video375.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3DFA46481F2892FA002C034F /* video375.mp4 */; };
 		529232201EBDEE1200285615 /* BMCustomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292321F1EBDEE1200285615 /* BMCustomPlayer.swift */; };
 		529232221EBDF04C00285615 /* StoryboardPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529232211EBDF04C00285615 /* StoryboardPlayerViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -38,7 +39,7 @@
 		3D4773831F274E3F00273367 /* MyBMCustomPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBMCustomPlayer.swift; sourceTree = "<group>"; };
 		3D4773851F274EB100273367 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		3DFA46401F2831A6002C034F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		3DFA46461F2890E9002C034F /* video375.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video375.mp4; path = BMPlayer/video375.mp4; sourceTree = "<group>"; };
+		3DFA46481F2892FA002C034F /* video375.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video375.mp4; sourceTree = "<group>"; };
 		5289EA86F9A99469E4F811E8 /* Pods-BMPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMPlayer_Example/Pods-BMPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5292321F1EBDEE1200285615 /* BMCustomPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCustomPlayer.swift; sourceTree = "<group>"; };
 		529232211EBDF04C00285615 /* StoryboardPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardPlayerViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +108,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				3DFA46461F2890E9002C034F /* video375.mp4 */,
+				3DFA46481F2892FA002C034F /* video375.mp4 */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				6A4F83141E90CB8500ABE3CA /* Resource */,
 				607FACD21AFB9204008FA782 /* Example for BMPlayer */,
@@ -285,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFA46491F2892FA002C034F /* video375.mp4 in Resources */,
 				6A4F83161E90CB8500ABE3CA /* SubtitleDemo.srt in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -296,7 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DFA46471F2890E9002C034F /* video375.mp4 in Resources */,
+				3DFA464A1F2892FF002C034F /* video375.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -269,7 +269,9 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             make.height.equalTo(50)
             make.centerY.equalTo(totalTimeLabel)
             make.left.equalTo(currentTimeLabel.snp.right)
-            make.right.equalTo(bottomMaskView.snp.right)
+            make.right.equalTo(bottomMaskView.snp.right).offset(-15  // trailing of heart image
+                    - 45 // width of heart image
+                - 20) // traling with heart image
         }
         
         // === end new ===

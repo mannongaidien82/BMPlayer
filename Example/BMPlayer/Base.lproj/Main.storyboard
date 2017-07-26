@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -146,6 +147,14 @@
                                     <constraint firstAttribute="height" constant="430" id="DHO-7l-vit"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-Ax-MQH">
+                                <rect key="frame" x="299" y="385" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4Xa-sV-Ad1"/>
+                                    <constraint firstAttribute="width" constant="45" id="Grs-M4-qWl"/>
+                                </constraints>
+                                <state key="normal" image="play-video-heart"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-ie-1lC" userLabel="controlView">
                                 <rect key="frame" x="0.0" y="530" width="375" height="55"/>
                                 <subviews>
@@ -196,8 +205,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9sW-F5-NQm" secondAttribute="trailing" id="DbM-Nn-NzU"/>
                             <constraint firstItem="9sW-F5-NQm" firstAttribute="top" secondItem="9Hs-RP-WBn" secondAttribute="top" id="JwT-y2-WWk"/>
+                            <constraint firstItem="dIS-Ax-MQH" firstAttribute="top" secondItem="9sW-F5-NQm" secondAttribute="bottom" constant="-45" id="KfF-DZ-5Wf"/>
                             <constraint firstItem="NrA-ie-1lC" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="KgT-jt-mIk"/>
                             <constraint firstItem="9sW-F5-NQm" firstAttribute="leading" secondItem="9Hs-RP-WBn" secondAttribute="leading" id="NOw-4R-9WR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dIS-Ax-MQH" secondAttribute="trailing" constant="15" id="PuC-pK-44f"/>
                             <constraint firstAttribute="trailing" secondItem="NrA-ie-1lC" secondAttribute="trailing" id="w0Y-lN-1ay"/>
                             <constraint firstItem="NrA-ie-1lC" firstAttribute="top" secondItem="9sW-F5-NQm" secondAttribute="bottom" constant="100" id="zvr-E7-9f1"/>
                         </constraints>
