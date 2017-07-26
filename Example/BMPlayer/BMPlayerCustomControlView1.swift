@@ -50,9 +50,10 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         addSubview(mainMaskView)
         mainMaskView.addSubview(topMaskView)
         mainMaskView.addSubview(bottomMaskView)
-        mainMaskView.insertSubview(maskImageView, at: 0)
+        //mainMaskView.insertSubview(maskImageView, at: 0)
         mainMaskView.clipsToBounds = true
-        mainMaskView.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4 )
+        mainMaskView.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0 )
+        //mainMaskView.backgroundColor = UIColor(hex: "464646")
         
         // Top views
         topMaskView.addSubview(backButton)
@@ -76,6 +77,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         bottomMaskView.addSubview(progressView)
         bottomMaskView.addSubview(timeSlider)
         bottomMaskView.addSubview(fullscreenButton)
+        bottomMaskView.backgroundColor = UIColor(hex: "464646")
         
         playButton.tag = BMPlayerControlView.ButtonType.play.rawValue
         playButton.setImage(MyBMImageResourcePath("play-video-play"),  for: .normal)
@@ -164,11 +166,11 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             //make.height.equalTo(videoHieght + controlViewHieght) // self.frame.size.height = 0
         }
         
-        maskImageView.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(mainMaskView)
-            make.height.equalTo(videoHeight)
-            //make.edges.equalTo(mainMaskView)
-        }
+//        maskImageView.snp.makeConstraints { (make) in
+//            make.top.left.right.equalTo(mainMaskView)
+//            make.height.equalTo(videoHeight)
+//            //make.edges.equalTo(mainMaskView)
+//        }
         
         
         topMaskView.snp.makeConstraints { (make) in
@@ -178,7 +180,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         
         bottomMaskView.snp.makeConstraints { (make) in
             make.bottom.left.right.equalTo(mainMaskView)
-            make.height.equalTo(100)
+            make.height.equalTo(controlViewHieght)
         }
         
         // Top views
@@ -338,11 +340,11 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
                 $0.height.equalTo(65)
             }
             
-            self.bottomMaskView.snp.remakeConstraints {
-                $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : self.controlViewHieght)
-                $0.left.right.equalTo(self.mainMaskView)
-                $0.height.equalTo(self.controlViewHieght)
-            }
+//            self.bottomMaskView.snp.remakeConstraints {
+//                $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : self.controlViewHieght)
+//                $0.left.right.equalTo(self.mainMaskView)
+//                $0.height.equalTo(self.controlViewHieght)
+//            }
             self.layoutIfNeeded()
         }) { (_) in
             self.autoFadeOutControlViewWithAnimation()

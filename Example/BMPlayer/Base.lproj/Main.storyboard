@@ -141,7 +141,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sW-F5-NQm" customClass="MyBMCustomPlayer" customModule="BMPlayer_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="430" id="DHO-7l-vit"/>
                                 </constraints>

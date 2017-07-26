@@ -41,13 +41,26 @@ class MyStoryboardPlayerViewController: UIViewController {
             }
             let _ = self.navigationController?.popViewController(animated: true)
         }
+        //let url = URL(string: "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4")!
+        //let url = Bundle.main.url(forResource: "video375", withExtension: ".mp4")!
+        guard let path = Bundle.main.path(forResource: "video375", ofType:"mp4") else {
+            debugPrint("video.m4v not found")
+            return
+        }
+        let url =  URL(fileURLWithPath: path)
         
-        let asset = BMPlayerResource(url: URL(string: "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4")!,
+        let asset = BMPlayerResource(url: url,
                                      name: "周末号外丨中国第一高楼",
                                      cover: nil,
                                      subtitle: nil)
         player.setVideo(resource: asset)
         
         BMPlayerConf.topBarShowInCase = .none
+        
+        /*
+         let url = Bundle.main.url(forResource: "oxford_3k", withExtension: ".html", subdirectory: "html_kanjiapp")!
+         let urlRequest = URLRequest(url: url)
+         webView.load(urlRequest)
+         */
     }
 }
