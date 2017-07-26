@@ -192,7 +192,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             make.height.equalTo(50)
             make.left.bottom.equalTo(bottomMaskView)
         }
-        
+        /*
         currentTimeLabel.snp.makeConstraints { (make) in
             make.left.equalTo(playButton.snp.right)
             make.centerY.equalTo(playButton)
@@ -215,14 +215,49 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             make.left.equalTo(timeSlider.snp.right).offset(5)
             make.width.equalTo(40)
         }
+         
+         fullscreenButton.snp.makeConstraints { (make) in
+         make.width.equalTo(50)
+         make.height.equalTo(50)
+         make.centerY.equalTo(currentTimeLabel)
+         make.left.equalTo(totalTimeLabel.snp.right)
+         make.right.equalTo(bottomMaskView.snp.right)
+         }
+ */
+        // === new ===
+        totalTimeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(playButton.snp.right)
+            make.centerY.equalTo(playButton)
+            make.width.equalTo(40)
+        }
+        
+        timeSlider.snp.makeConstraints { (make) in
+            make.centerY.equalTo(totalTimeLabel)
+            make.left.equalTo(totalTimeLabel.snp.right).offset(10).priority(750)
+            make.height.equalTo(30)
+        }
+        
+        progressView.snp.makeConstraints { (make) in
+            make.centerY.left.right.equalTo(timeSlider)
+            make.height.equalTo(2)
+        }
+        
+        currentTimeLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(totalTimeLabel)
+            make.left.equalTo(timeSlider.snp.right).offset(5)
+            make.width.equalTo(40)
+        }
+        
         
         fullscreenButton.snp.makeConstraints { (make) in
             make.width.equalTo(50)
             make.height.equalTo(50)
-            make.centerY.equalTo(currentTimeLabel)
-            make.left.equalTo(totalTimeLabel.snp.right)
+            make.centerY.equalTo(totalTimeLabel)
+            make.left.equalTo(currentTimeLabel.snp.right)
             make.right.equalTo(bottomMaskView.snp.right)
         }
+        
+        // === end new ===
         
         
         loadingIndector.snp.makeConstraints { (make) in
