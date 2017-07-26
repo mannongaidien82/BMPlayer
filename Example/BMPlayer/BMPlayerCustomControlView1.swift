@@ -27,7 +27,40 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         newaddSnapKitConstraint()
     }
     
-    override func customizeUIComponents() {}
+    override func customizeUIComponents() {
+        topMaskView.isHidden = true
+        
+        totalTimeLabel.removeFromSuperview()
+        fullscreenButton.removeFromSuperview()
+        
+        // If needs to change position remake the constraint
+        
+//        totalTimeLabel.snp.makeConstraints { (make) in
+//            make.left.equalTo(playButton.snp.right)
+//            make.centerY.equalTo(playButton)
+//            make.width.equalTo(40)
+//        }
+        
+        timeSlider.snp.makeConstraints { (make) in
+            make.centerY.equalTo(playButton)
+            make.left.equalTo(playButton.snp.right).offset(10)
+            make.height.equalTo(30)
+        }
+        
+        progressView.snp.makeConstraints { (make) in
+            make.centerY.left.right.equalTo(timeSlider)
+            make.height.equalTo(2)
+        }
+        
+        currentTimeLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(playButton)
+            make.left.equalTo(timeSlider.snp.right).offset(5)
+            make.width.equalTo(40)
+            make.right.equalTo(bottomMaskView.snp.right).offset(-15  // trailing of heart image
+                - 45 // width of heart image
+                - 20) // traling with heart image
+        }
+    }
     
     func newsetupUIComponents() {
         print(#function)
