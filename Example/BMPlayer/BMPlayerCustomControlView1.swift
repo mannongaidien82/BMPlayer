@@ -150,7 +150,9 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
     open func newaddSnapKitConstraint() {
         // Main mask view
         mainMaskView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            //make.edges.equalTo(self)
+            make.top.left.right.equalTo(self)
+            make.height.equalTo(530)
         }
         
         maskImageView.snp.makeConstraints { (make) in
@@ -165,7 +167,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
         
         bottomMaskView.snp.makeConstraints { (make) in
             make.bottom.left.right.equalTo(mainMaskView)
-            make.height.equalTo(50)
+            make.height.equalTo(100)
         }
         
         // Top views
@@ -328,7 +330,7 @@ class BMPlayerCustomControlView1: BMPlayerControlView {
             self.bottomMaskView.snp.remakeConstraints {
                 $0.bottom.equalTo(self.mainMaskView).offset(isShow ? 0 : 50)
                 $0.left.right.equalTo(self.mainMaskView)
-                $0.height.equalTo(50)
+                $0.height.equalTo(100)
             }
             self.layoutIfNeeded()
         }) { (_) in
